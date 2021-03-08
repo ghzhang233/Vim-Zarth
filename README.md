@@ -1,4 +1,4 @@
-# ZarthVim
+# Vim-Zarth
 ## Introduction
 This is a effective yet fast configuration for Vim in terminal. Only five useful plugins are installed. No syntax check or autocompletion plugins are included for speed consideration. Specifically, the keymap is as follows,
 ```
