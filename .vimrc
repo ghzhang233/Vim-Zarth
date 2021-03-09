@@ -32,6 +32,7 @@ set nu
 set mouse=a
 set ruler
 set hlsearch 
+set incsearch
 set wrap
 set backspace=2 
 
@@ -46,6 +47,12 @@ set fileencodings=utf-8,chinese,latin-1
 set expandtab
 set pastetoggle=<F12>
 
+if has("autocmd")
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+    autocmd InsertEnter,InsertLeave * set cul!
+endif
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""
@@ -73,6 +80,7 @@ Plugin 'yianwillis/vimcdoc'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
+Plugin 'luochen1990/rainbow'
 
 
 " All of your Plugins must be added before the following line
@@ -130,10 +138,23 @@ let g:NERDTrimTrailingWhitespace = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""
 map <C-e> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Start NERDTree, unless a file or session is specified, eg. vim -S session_file.vim.
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
+
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowLineNumbers=1
-let NERDTreeSortOrder=['\.cpp$', '\.c$', '\.h$']
+let NERDTreeSortOrder=['\.py', '\.cpp$', '\.c$', '\.h$', '\.json', '\.csv', '\.txt', '\.md']
 let NERDTreeIgnore=['\.lnk$', '\~$' , '\.vim$']
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"Configure of rainbow:
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
