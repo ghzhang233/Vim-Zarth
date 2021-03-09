@@ -9,6 +9,7 @@ kj -> <ESC>
 <Leader>cc -> Unomment this line
 
 C-e -> Open NerdTree
+C-ww -> Switch to another tab
 
 C-n -> Next buffer
 C-p -> Last buffer
@@ -18,7 +19,8 @@ F1 -> Chinese help document
 
 
 ## Installation
-Feel free to use it with following command!
+Feel free to use it with following command:
 ```shell
 ./run.sh
 ```
+This command can also be used to catch up with the newest version.
