@@ -147,7 +147,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
 
-let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen=0
 let NERDTreeShowLineNumbers=1
 let NERDTreeSortOrder=['\.py', '\.cpp$', '\.c$', '\.h$', '\.json', '\.csv', '\.txt', '\.md']
 let NERDTreeIgnore=['\.lnk$', '\~$' , '\.vim$']
