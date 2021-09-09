@@ -76,7 +76,7 @@ Plugin 'VundleVim/Vundle.vim'
 " My own Plugins:
 
 """""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'yianwillis/vimcdoc'
+" Plugin 'yianwillis/vimcdoc'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
