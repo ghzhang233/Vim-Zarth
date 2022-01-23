@@ -13,8 +13,6 @@ C-ww -> Switch to another tab
 
 C-n -> Next buffer
 C-p -> Last buffer
-
-F1 -> Chinese help document
 ```
 
 
