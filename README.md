@@ -6,7 +6,7 @@ kj -> <ESC>
 ,(comma) -> <Leader>
 
 <Leader>cc -> Comment this line
-<Leader>cc -> Unomment this line
+<Leader>cu -> Unomment this line
 
 C-e -> Open NerdTree
 C-ww -> Switch to another tab
